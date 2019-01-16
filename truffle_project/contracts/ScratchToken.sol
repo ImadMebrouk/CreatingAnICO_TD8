@@ -5,7 +5,7 @@ import "../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 contract ScratchToken is ERC20 {
     mapping (address => uint256) private _balances; // array with all adress
     mapping (address => mapping (address => uint256)) private _allowed;
-    string  public _name     = "Berry ";          // name of the token
+    string  public _name     = "Berry";          // name of the token
     string  public _symbol   = "BRY";            // symbole of the token
     uint8   public _decimals = 5 ;             // the number of decimals the token uses
     uint256 public _totalSupply = 200000;               // Total token supply.
