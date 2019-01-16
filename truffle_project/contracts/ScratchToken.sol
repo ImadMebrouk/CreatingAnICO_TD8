@@ -10,6 +10,7 @@ contract ScratchToken is ERC20 {
     uint8   public _decimals = 5 ;             // the number of decimals the token uses
     uint256 public _totalSupply = 200000;               // Total token supply.
     address public _owner;                    // owner of the token
+    mapping(address => bool) whitelist;   // customer white listing
 
 
     constructor() public {
@@ -110,4 +111,18 @@ contract ScratchToken is ERC20 {
     function allowance(address owner, address spender) public view returns (uint256 remaining) {
         return _allowed[owner][spender];
     }
+
+    function approve(address addr) public {
+        // owner approves buyers by address when they pass the whitelisting procedure
+        require(msg.sender == _owner);
+
+        whitelist[addr] = true;
+    }
+
+    function purchase() public payable {
+        // only approved buyers can call this function
+        require(whitelist[msg.sender]);
+
+    }
+
 }
