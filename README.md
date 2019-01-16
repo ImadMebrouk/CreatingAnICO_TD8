@@ -12,3 +12,10 @@
 - [ ] Implement customer white listing (2 pts)
 - [ ] Implement multi level distribution (2 pts)
 - [ ] Create a token bonding curve (2 pts)
+
+
+
+#### Tests : 
+
+To run testing routines, you just need to run the following command :
+> truffle test --development 
