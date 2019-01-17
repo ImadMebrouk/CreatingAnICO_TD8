@@ -10,7 +10,7 @@ contract ScratchToken is ERC20 {
     uint8   public _decimals = 5 ;             // the number of decimals the token uses
     uint256 public _totalSupply = 200000;               // Total token supply.
     address public _owner;                    // owner of the token
-    mapping(address => bool) whitelist;   // customer white listing
+    mapping(address => bool) whitelist;   // customer white liste
 
 
     constructor() public {
